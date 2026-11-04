@@ -1,0 +1,19 @@
+{
+  "status": "not_executed_requires_actual_host_endpoints_and_independent_operator",
+  "roles": ["load generator", "SVEC Gate", "Policy Authority", "Ganache", "signed registry"],
+  "phase_one": {
+    "clients": [1, 4, 8, 16, 32],
+    "batch_records": [128],
+    "profiles": ["stable", "publication per 5 admissions"],
+    "backends": ["Ganache", "signed registry"],
+    "strategies": ["full", "epoch-keyed", "SVEC"],
+    "fresh_process_runs_per_cell": 10,
+    "admission_window_seconds": 30,
+    "ordering": "predeclared randomized strategy order within paired run blocks"
+  },
+  "phase_two_candidates": {"clients": [64], "batch_records": [32, 256, 512], "update_every_admissions": [2, 10, 20]},
+  "required_measurements": ["admitted and in-window released requests/s", "p50/p95/p99", "policy suppression", "epoch-order rejection", "timeout/operational failures", "proof checks/request", "direct cache lookup hits/misses", "per-role CPU and RSS", "network interface wire counters", "drain duration", "output binding and authority event order"],
+  "analysis": "paired process-block confidence intervals and absolute/relative effects; retain every failed cell; no request-IID inference",
+  "capacity_scope": "predefine offered-load and queue limits before claiming saturation; closed-loop client counts alone do not establish a universal capacity bound",
+  "prohibited_inference": "This plan is not measured evidence. Containers on one host do not count as five physical hosts or ten independent research teams."
+}

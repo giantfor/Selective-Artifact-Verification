@@ -1,0 +1,23 @@
+{
+  "cases": [
+    {
+      "artifact": "data",
+      "error": "DATA_HASH",
+      "activation_entries": 0,
+      "model_calls": 0
+    },
+    {
+      "artifact": "model",
+      "error": "MODEL_HASH",
+      "activation_entries": 0,
+      "model_calls": 0
+    },
+    {
+      "artifact": "schema",
+      "error": "SCHEMA_HASH",
+      "activation_entries": 0,
+      "model_calls": 0
+    }
+  ],
+  "all_passed": true
+}
